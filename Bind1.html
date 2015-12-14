@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绑定语法一</title>
+    <script src="js/knockout-3.3.0.js"></script>
+
+</head>
+<body>
+
+<h1>visible</h1>
+<div data-bind="visible:false">
+    You will see this message only when "shouldShowMessage" holds a true value.
+</div>
+
+<h1>text</h1>
+
+
+
+<script type="text/javascript">
+    var viewModel = {
+        shouldShowMessage: ko.observable(true),
+        myValue: ko.observableArray([]) // Message initially visible
+    };
+    viewModel.shouldShowMessage(false); // ... now it's hidden
+    //viewModel.shouldShowMessage(true); // ... now it's visible again
+    viewModel.myValue.push("some value")
+</script>
+</body>
+</html>
